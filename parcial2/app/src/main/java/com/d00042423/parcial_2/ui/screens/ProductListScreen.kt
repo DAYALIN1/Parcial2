@@ -1,2 +1,3 @@
 package com.d00042423.parcial_2.ui.screens
 
+fun ProductListScreen(){}
