@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.StateFlow
 
 class ProductViewModel : ViewModel() {
 
-    private val _products = MutableStateFlow<List<Product>>(ObtenerProduct)
-    val filteredPets: StateFlow<List<Product>> = _products
+    private val _products = MutableStateFlow<List<Product>>(ObtenerProduct())
+    val filteredProduct: StateFlow<List<Product>> = _products
 
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery
@@ -19,7 +19,7 @@ class ProductViewModel : ViewModel() {
     fun onSearchQueryChange(query: String) {
         _searchQuery.value = query
         val filtered = ObtenerProduct().filter {
-            it.name.contains(query, ignoreCase = true) || it.type.contains(query, ignoreCase = true)
+            it.name.contains(query, ignoreCase = true) || it.category.contains(query, ignoreCase = true)
         }
         _products.value = filtered
     }

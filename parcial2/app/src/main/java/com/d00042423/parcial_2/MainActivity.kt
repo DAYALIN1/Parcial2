@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.d00042423.parcial_2.Navigation.AppNavigation
 import com.d00042423.parcial_2.ui.theme.Parcial_2Theme
 
 class MainActivity : ComponentActivity() {
@@ -19,10 +20,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Parcial_2Theme {
-
+                AppNavigation()
 
             }
         }
     }
 }
+
+/*                val navController = rememberNavController()
+                val petViewModel: PetViewModel = viewModel()
+                AppNavGraph(navController, petViewModel)*/
 
